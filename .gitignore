@@ -1,0 +1,54 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# Maven
+target/
+*.jar
+*.war
+*.ear
+mvnw
+mvnw.cmd
+
+# Gradle
+build/
+.gradle/
+
+# Logs
+logs/
+*.log
+
+# Temporal
+*.tmp
+*.log*
+*.swp
+*~
+
+# Bytecode
+*.class
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Thumbnails
+._*
+
+# Files that might appear on external volumes
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
