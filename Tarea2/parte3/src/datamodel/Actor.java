@@ -49,6 +49,20 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "Actor #" + actor_id + ": " + first_name + " " + last_name;
+        // Parte 3. Actividad 8. Modificar el metodo toString para ver las peliculas del actor
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Actor #").append(actor_id).append(": ").append(first_name).append(" ").append(last_name).append(" [");
+
+        if (films != null && !films.isEmpty()) {
+            for (String film : films) {
+                stringBuilder.append("\n\"").append(film).append("\",");
+            }
+            // Eliminar la coma adicional al final
+            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+        }
+
+        stringBuilder.append("\n]");
+
+        return stringBuilder.toString();
     }
 }

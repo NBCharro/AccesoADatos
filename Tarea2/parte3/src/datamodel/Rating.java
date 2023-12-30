@@ -8,33 +8,25 @@ public enum Rating {
     NC_17("NC-17"),
     NULL(null);
 
-    private final String value;
-    // Valor por defecto
     private static final String DEFAULT_VALUE = null;
 
-    // Constructor privado para asignar el valor
+    private final String value;
+
     private Rating(String value) {
         this.value = value;
     }
-    // Método estático para obtener el valor por defecto
-    public static String getDefaultValue() {
-        return DEFAULT_VALUE;
+
+    public String getValue() {
+        return value;
     }
 
-    // Método estático para obtener un objeto Rating desde un String
+    // Parte 3. Actividad 6. Implementa el metodo of
     public static Rating of(String input) {
         for (Rating rating : Rating.values()) {
             if ((input == null && rating.value == null) || (input != null && input.equals(rating.value))) {
                 return rating;
             }
         }
-        return NULL;  // Valor por defecto si no se encuentra ninguna coincidencia
+        return NULL;
     }
-
-    // Método para obtener los valores de los atributos
-    public String getValue() {
-        return value;
-    }
-
-
 }

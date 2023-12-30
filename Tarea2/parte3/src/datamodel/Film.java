@@ -12,18 +12,15 @@ public class Film {
     private String description;
     private short releaseYear;
     private byte languageId;
-    private Byte originalLanguageId;
+    private Integer originalLanguageId;
     private byte rentalDuration;
     private double rentalRate;
     private short length;
     private double replacementCost;
-    private String rating;
+    private Rating rating;
     private String specialFeatures;
-    private Timestamp lastUpdate;
 
-    private List<String> actors;
-
-    public Film(short filmId, String title, String description, short releaseYear, byte languageId, Byte originalLanguageId, byte rentalDuration, double rentalRate, short length, double replacementCost, String rating, String specialFeatures, Timestamp lastUpdate) {
+    public Film(short filmId, String title, String description, short releaseYear, byte languageId, Integer originalLanguageId, byte rentalDuration, double rentalRate, short length, double replacementCost, String rating, String specialFeatures) {
         this.filmId = filmId;
         this.title = title;
         this.description = description;
@@ -34,9 +31,8 @@ public class Film {
         this.rentalRate = rentalRate;
         this.length = length;
         this.replacementCost = replacementCost;
-        this.rating = rating;
+        this.rating = Rating.of(rating);
         this.specialFeatures = specialFeatures;
-        this.lastUpdate = lastUpdate;
     }
 
     public short getFilmId() {
@@ -79,11 +75,11 @@ public class Film {
         this.languageId = languageId;
     }
 
-    public Byte getOriginalLanguageId() {
+    public Integer getOriginalLanguageId() {
         return originalLanguageId;
     }
 
-    public void setOriginalLanguageId(Byte originalLanguageId) {
+    public void setOriginalLanguageId(Integer originalLanguageId) {
         this.originalLanguageId = originalLanguageId;
     }
 
@@ -119,11 +115,11 @@ public class Film {
         this.replacementCost = replacementCost;
     }
 
-    public String getRating() {
+    public Rating getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Rating rating) {
         this.rating = rating;
     }
 
@@ -135,19 +131,21 @@ public class Film {
         this.specialFeatures = specialFeatures;
     }
 
-    public Timestamp getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Timestamp lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-
-    public List<String> getActors() {
-        return actors;
-    }
-
-    public void setActors(List<String> actors) {
-        this.actors = actors;
+    @Override
+    public String toString() {
+        return "Film{" +
+                "filmId=" + filmId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", releaseYear=" + releaseYear +
+                ", languageId=" + languageId +
+                ", originalLanguageId=" + originalLanguageId +
+                ", rentalDuration=" + rentalDuration +
+                ", rentalRate=" + rentalRate +
+                ", length=" + length +
+                ", replacementCost=" + replacementCost +
+                ", rating=" + rating +
+                ", specialFeatures='" + specialFeatures + '\'' +
+                '}';
     }
 }
